@@ -156,8 +156,7 @@ func _physics_process(delta):
 	checkPoints()
 	checkGrabs()
 	jump(delta)
-
-	#motion.y = clamp(motion.y, -SPEED_VERTICAL_UP_MAX, SPEED_VERTICAL_DOWN_MAX)	
+	
 	motion = move_and_slide(motion, Vector2.UP)
 	#var angle = position + motion
 	#look_at(angle)
