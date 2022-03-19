@@ -1,0 +1,121 @@
+{"Level_0_0":{
+	"world": 0,
+	"medal": ["15000","12000","11000","10000"],
+	"name": "First steps",
+	"nextLevel": "Level_0_1"
+  },
+  "Level_0_1":{
+	"world": 0,
+	"medal": ["15000","12000","10000","8000"],
+	"name": "Bounce",
+	"nextLevel": "Level_0_2"
+  },
+  "Level_0_2":{
+	"world": 0,
+	"medal": ["15000","12000","10000","9000"],
+	"name": "Speed Up",
+	"nextLevel": "Level_0_3"
+  },
+  "Level_0_3":{
+	"world": 0,
+	"medal": ["15000","12000","10000","9000"],
+	"name": "Grab it",
+	"nextLevel": "Level_0_4"
+  },
+  "Level_0_4":{
+	"world": 0,
+	"medal": ["15000","12000","10000","8500"],
+	"name": "You're getting used to this",
+	"nextLevel": "Level_0_5"
+  },
+  "Level_0_5":{
+	"world": 0,
+	"medal": ["16000","13000","11000","10000"],
+	"name": "Try to get a good time",
+	"nextLevel": "Level_0_6"
+  },
+  "Level_0_6":{
+	"world": 0,
+	"medal": ["15000","12000","10000","9000"],
+	"name": "Slide",
+	"nextLevel": "Level_0_7"
+  },
+  "Level_0_7":{
+	"world": 0,
+	"medal": ["13000","11000","10000","7500"],
+	"name": "Long jump",
+	"nextLevel": "Level_0_8"
+  },
+  "Level_0_8":{
+	"world": 0,
+	"medal": ["16000","14000","12000","11000"],
+	"name": "Timing",
+	"nextLevel": "Level_0_9"
+  },
+  "Level_0_9":{
+	"world": 0,
+	"medal": ["16000","13000","12000","10000"],
+	"name": "Tricky",
+	"nextLevel": "Level_1_0"
+  },
+  "Level_1_0":{
+	"world": 1,
+	"medal": ["30000","20000","5000","2500"],
+	"name": "Fisrt contact",
+	"nextLevel": "Level_0_1"
+  },
+  "Level_1_1":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "2 contact",
+	"nextLevel": "Level_0_2"
+  },
+  "Level_1_2":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "3 contact",
+	"nextLevel": "Level_0_3"
+  },
+  "Level_1_3":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "4 contact",
+	"nextLevel": "Level_0_4"
+  },
+  "Level_1_4":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "5 contact",
+	"nextLevel": "Level_0_5"
+  },
+  "Level_1_5":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "5 contact",
+	"nextLevel": "Level_0_6"
+  },
+  "Level_1_6":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "5 contact",
+	"nextLevel": "Level_0_7"
+  },
+  "Level_1_7":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "5 contact",
+	"nextLevel": "Level_0_8"
+  },
+  "Level_1_8":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "5 contact",
+	"nextLevel": "Level_0_9"
+  },
+  "Level_1_9":{
+	"world": 1,
+	"medal": ["30000","30000","30000","30000"],
+	"name": "5 contact",
+	"nextLevel": "Level_1_0"
+  }
+}

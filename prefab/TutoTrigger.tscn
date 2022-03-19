@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/TutoTrigger.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 307.926 )
+
+[node name="TutoTrigger" type="Area2D"]
+position = Vector2( 1213.56, 534.695 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.33496, -233.597 )
+shape = SubResource( 1 )

@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://World.tres" type="TileSet" id=1]
+[ext_resource path="res://prefab/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefab/Orb.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/level.gd" type="Script" id=5]
+[ext_resource path="res://prefab/Grab.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefab/UI/EndLevelUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefab/UI/CanvasUILevel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefab/EndZone.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefab/DeathZone.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefab/UI/CanvasPauseMenu.tscn" type="PackedScene" id=14]
+
+[node name="Level_0_4" type="Node2D"]
+script = ExtResource( 5 )
+level_name = "Level_0_4"
+
+[node name="EndZone" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3226.93, 296.006 )
+
+[node name="CollisionShape2D" parent="EndZone" index="0"]
+scale = Vector2( 1, 1.2 )
+
+[node name="Sprite" parent="EndZone" index="1"]
+scale = Vector2( 4.1748, 4.1535 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128.967, 458.884 )
+
+[node name="RemoteTransform2D" parent="Player" index="4"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128.967, 458.884 )
+
+[node name="TopLeft" parent="Camera2D" index="0"]
+position = Vector2( -138.466, -480.833 )
+
+[node name="BottomRight" parent="Camera2D" index="1"]
+position = Vector2( 2910.06, 122.325 )
+
+[node name="Orbs" type="Node" parent="."]
+
+[node name="Orb" parent="Orbs" instance=ExtResource( 4 )]
+position = Vector2( 416.14, 513.895 )
+
+[node name="Orb2" parent="Orbs" instance=ExtResource( 4 )]
+position = Vector2( 624.14, 515.895 )
+
+[node name="Orb3" parent="Orbs" instance=ExtResource( 4 )]
+position = Vector2( 1805.29, 299.895 )
+
+[node name="Orb4" parent="Orbs" instance=ExtResource( 4 )]
+position = Vector2( 2537.7, 427.895 )
+
+[node name="Grabs" type="Node" parent="."]
+
+[node name="Grab" parent="Grabs" instance=ExtResource( 7 )]
+position = Vector2( 1329.16, 479.506 )
+
+[node name="Grab2" parent="Grabs" instance=ExtResource( 7 )]
+position = Vector2( 1629.82, 473.349 )
+
+[node name="Grab3" parent="Grabs" instance=ExtResource( 7 )]
+position = Vector2( 2253.43, 425.349 )
+
+[node name="CanvasEndLevel" parent="." instance=ExtResource( 10 )]
+
+[node name="CanvasUILevel" parent="." instance=ExtResource( 11 )]
+
+[node name="CanvasPauseMenu" parent="." instance=ExtResource( 14 )]
+
+[node name="DeathZone" parent="." instance=ExtResource( 13 )]
+position = Vector2( -92.2813, 759.57 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 9, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 0, 7, 9, 0, 8, 9, 0, 9, 9, 0, 10, 9, 0, 11, 9, 0, 12, 9, 0, 13, 9, 0, 14, 9, 0, 15, 9, 0, 16, 9, 0, 17, 9, 0, 18, 9, 0, 19, 9, 0, 20, 9, 0, 21, 9, 0, 22, 9, 0, 23, 9, 0, 24, 9, 0, 25, 9, 0, 26, 9, 0, 27, 9, 0, 28, 9, 0, 29, 9, 0, 30, 9, 0, 31, 9, 0, 32, 9, 0, 33, 9, 0, 34, 9, 0, 35, 9, 0, 36, 9, 0, 37, 9, 0, 38, 9, 0, 39, 9, 0, 40, 9, 0, 41, 9, 0, 42, 9, 0, 43, 9, 0, 44, 9, 0, 45, 9, 0, 46, 9, 0, 47, 9, 0, 48, 9, 0, 49, 9, 0, 50, 9, 0, 51, 9, 0, 52, 9, 0, 53, 9, 0, 54, 9, 0, 55, 9, 0, 56, 9, 0, 57, 9, 0, 58, 9, 0, 59, 9, 0, 60, 9, 0, 61, 9, 0, 62, 9, 0, 63, 9, 0, 64, 9, 0, 65, 9, 0, 66, 9, 0, 67, 9, 0, 68, 9, 0, 69, 9, 0, 70, 9, 0, 71, 9, 0, 72, 9, 0, 73, 9, 0, 74, 9, 0, 75, 9, 0, 76, 9, 0, 77, 9, 0, 78, 9, 0, 79, 9, 0, 80, 9, 0, 81, 9, 0, 82, 9, 0, 83, 9, 0, 84, 9, 0, 85, 9, 0, 86, 9, 0, 87, 9, 0, 88, 9, 0, 89, 9, 0, 90, 9, 0, 91, 9, 0, 92, 9, 0, 93, 9, 0, 94, 9, 0, 95, 9, 0, 96, 9, 0, 97, 9, 0, 98, 9, 0, 99, 9, 0, 100, 9, 0, 101, 9, 0, 102, 9, 0, 103, 9, 0, 104, 9, 0, 105, 9, 0, 106, 9, 0, 107, 9, 0, 108, 9, 0, 109, 9, 0, 110, 9, 0, 111, 9, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65539, 9, 0, 65540, 9, 0, 65541, 9, 0, 65542, 9, 0, 65543, 9, 0, 65544, 9, 0, 65545, 9, 0, 65546, 9, 0, 65547, 9, 0, 65548, 9, 0, 65549, 9, 0, 65550, 9, 0, 65551, 9, 0, 65552, 9, 0, 65553, 9, 0, 65554, 9, 0, 65555, 9, 0, 65556, 9, 0, 65557, 9, 0, 65558, 9, 0, 65559, 9, 0, 65560, 9, 0, 65561, 9, 0, 65562, 9, 0, 65563, 9, 0, 65564, 9, 0, 65565, 9, 0, 65566, 9, 0, 65567, 9, 0, 65568, 9, 0, 65569, 9, 0, 65570, 9, 0, 65571, 9, 0, 65572, 9, 0, 65573, 9, 0, 65574, 9, 0, 65575, 9, 0, 65576, 9, 0, 65577, 9, 0, 65578, 9, 0, 65579, 9, 0, 65580, 9, 0, 65581, 9, 0, 65582, 9, 0, 65583, 9, 0, 65584, 9, 0, 65585, 9, 0, 65586, 9, 0, 65587, 9, 0, 65588, 9, 0, 65589, 9, 0, 65590, 9, 0, 65591, 9, 0, 65592, 9, 0, 65593, 9, 0, 65594, 9, 0, 65595, 9, 0, 65596, 9, 0, 65597, 9, 0, 65598, 9, 0, 65599, 9, 0, 65600, 9, 0, 65601, 9, 0, 65602, 9, 0, 65603, 9, 0, 65604, 9, 0, 65605, 9, 0, 65606, 9, 0, 65607, 9, 0, 65608, 9, 0, 65609, 9, 0, 65610, 9, 0, 65611, 9, 0, 65612, 9, 0, 65613, 9, 0, 65614, 9, 0, 65615, 9, 0, 65616, 9, 0, 65617, 9, 0, 65618, 9, 0, 65619, 9, 0, 65620, 9, 0, 65621, 9, 0, 65622, 9, 0, 65623, 9, 0, 65624, 9, 0, 65625, 9, 0, 65626, 9, 0, 65627, 9, 0, 65628, 9, 0, 65629, 9, 0, 65630, 9, 0, 65631, 9, 0, 65632, 9, 0, 65633, 9, 0, 65634, 9, 0, 65635, 9, 0, 65636, 9, 0, 65637, 9, 0, 65638, 9, 0, 65639, 9, 0, 65640, 9, 0, 65641, 9, 0, 65642, 9, 0, 65643, 9, 0, 65644, 9, 0, 65645, 9, 0, 65646, 9, 0, 65647, 9, 0, 131072, 9, 0, 131073, 9, 0, 196608, 9, 0, 196609, 9, 0, 262144, 9, 0, 262145, 9, 0, 327680, 9, 0, 327681, 9, 0, 393216, 9, 0, 393217, 9, 0, 458752, 9, 0, 458753, 9, 0, 524288, 9, 0, 524289, 9, 0, 589824, 9, 0, 589825, 9, 0, 655360, 9, 0, 655361, 9, 0, 720896, 9, 0, 720897, 9, 0, 786432, 9, 0, 786433, 9, 0, 851968, 9, 0, 851969, 9, 0, 917504, 9, 0, 917505, 9, 0, 983040, 9, 0, 983041, 9, 0, 1048576, 9, 0, 1048577, 9, 0, 1114112, 9, 0, 1114113, 9, 0, 1114114, 9, 0, 1114115, 9, 0, 1114116, 9, 0, 1114117, 9, 0, 1114118, 9, 0, 1114119, 9, 0, 1114138, 9, 0, 1114139, 9, 0, 1114140, 9, 0, 1114141, 9, 0, 1114142, 9, 0, 1114143, 9, 0, 1114144, 9, 0, 1114169, 9, 0, 1114170, 9, 0, 1114171, 9, 0, 1114172, 9, 0, 1114173, 9, 0, 1114174, 9, 0, 1114197, 9, 0, 1114198, 9, 0, 1114199, 9, 0, 1114200, 9, 0, 1114201, 9, 0, 1114202, 9, 0, 1114203, 9, 0, 1114204, 9, 0, 1114205, 9, 0, 1114206, 9, 0, 1114207, 9, 0, 1114208, 9, 0, 1114209, 9, 0, 1114210, 9, 0, 1114211, 9, 0, 1114212, 9, 0, 1114213, 9, 0, 1114214, 9, 0, 1114215, 9, 0, 1114216, 9, 0, 1114217, 9, 0, 1114218, 9, 0, 1114219, 9, 0, 1114220, 9, 0, 1179648, 9, 0, 1179649, 9, 0, 1179650, 9, 0, 1179651, 9, 0, 1179652, 9, 0, 1179653, 9, 0, 1179654, 9, 0, 1179655, 9, 0, 1179674, 9, 0, 1179675, 9, 0, 1179676, 9, 0, 1179677, 9, 0, 1179678, 9, 0, 1179679, 9, 0, 1179680, 9, 0, 1179705, 9, 0, 1179706, 9, 0, 1179707, 9, 0, 1179708, 9, 0, 1179709, 9, 0, 1179710, 9, 0, 1179733, 9, 0, 1179734, 9, 0, 1179735, 9, 0, 1179736, 9, 0, 1179737, 9, 0, 1179738, 9, 0, 1179739, 9, 0, 1179740, 9, 0, 1179741, 9, 0, 1179742, 9, 0, 1179743, 9, 0, 1179744, 9, 0, 1179745, 9, 0, 1179746, 9, 0, 1179747, 9, 0, 1179748, 9, 0, 1179749, 9, 0, 1179750, 9, 0, 1179751, 9, 0, 1179752, 9, 0, 1179753, 9, 0, 1179754, 9, 0, 1179755, 9, 0, 1179756, 9, 0 )
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2( 128.693, 362.039 )
+
+[connection signal="body_entered" from="EndZone" to="Player" method="_on_EndZone_body_entered"]
+[connection signal="body_entered" from="DeathZone" to="Player" method="_on_DeathZone_body_entered"]
+
+[editable path="EndZone"]
+[editable path="Player"]
+[editable path="Camera2D"]

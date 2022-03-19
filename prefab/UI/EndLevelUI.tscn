@@ -1,0 +1,197 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/UI/EndLevelUI.gd" type="Script" id=1]
+[ext_resource path="res://UI_button_Style/UI_Button_Style.tres" type="StyleBox" id=2]
+[ext_resource path="res://UI_button_Style/UI_Button_Style_Hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://UI_button_Style/BoxStyle.tres" type="StyleBox" id=4]
+[ext_resource path="res://Sprites/BronzeMedal.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/SilverMedal.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GoldMedal.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Grab.png" type="Texture" id=8]
+
+[node name="CanvasEndLevel" type="CanvasLayer"]
+
+[node name="EndLevelPanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -150.0
+margin_right = 250.0
+margin_bottom = 150.0
+custom_styles/panel = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndLevelPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -125.0
+margin_right = 225.0
+margin_bottom = 125.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelName" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer"]
+margin_left = 116.0
+margin_right = 366.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 250, 25 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "NAME OF LEVEL"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EndLevelPanel/VBoxContainer"]
+margin_left = 66.0
+margin_top = 29.0
+margin_right = 416.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 25
+
+[node name="LabelTime" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+text = "Time :"
+
+[node name="ValueTime" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainer"]
+margin_left = 125.0
+margin_right = 225.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="MedalTime" type="TextureRect" parent="EndLevelPanel/VBoxContainer/HBoxContainer"]
+margin_left = 250.0
+margin_right = 350.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="EndLevelPanel/VBoxContainer"]
+margin_left = 66.0
+margin_top = 83.0
+margin_right = 416.0
+margin_bottom = 133.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 25
+
+[node name="LabelBestTime" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainer2"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+text = "Best Time : "
+
+[node name="ValueBestTime" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainer2"]
+margin_left = 125.0
+margin_right = 225.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="MedalBestTime" type="TextureRect" parent="EndLevelPanel/VBoxContainer/HBoxContainer2"]
+margin_left = 250.0
+margin_right = 350.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="HBoxButton" type="HBoxContainer" parent="EndLevelPanel/VBoxContainer"]
+margin_left = 131.0
+margin_top = 137.0
+margin_right = 351.0
+margin_bottom = 187.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 100
+
+[node name="Retry" type="Button" parent="EndLevelPanel/VBoxContainer/HBoxButton"]
+margin_right = 45.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+text = "Retry"
+
+[node name="Next" type="Button" parent="EndLevelPanel/VBoxContainer/HBoxButton"]
+margin_left = 145.0
+margin_right = 220.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+text = "Next level"
+
+[node name="HBoxContainerMedalValue" type="HBoxContainer" parent="EndLevelPanel/VBoxContainer"]
+margin_top = 191.0
+margin_right = 482.0
+margin_bottom = 241.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+
+[node name="LabelBronze" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_right = 75.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 75, 50 )
+
+[node name="MedalBronze" type="TextureRect" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 85.0
+margin_right = 117.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="LabelSilver" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 127.0
+margin_right = 202.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 75, 50 )
+
+[node name="MedalSilver" type="TextureRect" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 212.0
+margin_right = 244.0
+margin_bottom = 50.0
+texture = ExtResource( 6 )
+
+[node name="LabelGold" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 254.0
+margin_right = 329.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 75, 50 )
+
+[node name="MedalGold" type="TextureRect" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 339.0
+margin_right = 371.0
+margin_bottom = 50.0
+texture = ExtResource( 7 )
+
+[node name="LabelDiamond" type="RichTextLabel" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 381.0
+margin_right = 456.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 75, 50 )
+
+[node name="MedalDiamond" type="TextureRect" parent="EndLevelPanel/VBoxContainer/HBoxContainerMedalValue"]
+margin_left = 466.0
+margin_right = 482.0
+margin_bottom = 50.0
+texture = ExtResource( 8 )
+
+[connection signal="pressed" from="EndLevelPanel/VBoxContainer/HBoxButton/Retry" to="EndLevelPanel" method="_on_Retry_pressed"]
+[connection signal="pressed" from="EndLevelPanel/VBoxContainer/HBoxButton/Next" to="EndLevelPanel" method="_on_Next_pressed"]

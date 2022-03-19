@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/endlevel.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 254.789, 206.621 )
+
+[node name="EndZone" type="Area2D"]
+position = Vector2( 4.75684, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -9.52442, -0.793686 )
+scale = Vector2( 4.1748, 3.2335 )
+texture = ExtResource( 2 )

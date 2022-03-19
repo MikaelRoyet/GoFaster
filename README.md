@@ -1,1 +1,1 @@
-GoFaster
+I wanna go faster

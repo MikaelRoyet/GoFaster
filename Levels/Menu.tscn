@@ -1,0 +1,195 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://TitFontsleFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/UI/Menu.gd" type="Script" id=2]
+[ext_resource path="res://UI_button_Style/UI_Button_Style.tres" type="StyleBox" id=3]
+[ext_resource path="res://UI_button_Style/UI_Button_Style_Hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://UI_button_Style/DisableButton.tres" type="StyleBox" id=5]
+[ext_resource path="res://Fonts/Pixellari.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 6 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+level_name = "Menu"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -396.0
+margin_top = 21.0
+margin_right = -196.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 200, 25 )
+rect_scale = Vector2( 5, 5 )
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "I WANNA GO FASTER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = -200.0
+margin_right = 250.0
+margin_bottom = -200.0
+rect_min_size = Vector2( 150, 150 )
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="MainMenuContainer"]
+margin_right = 150.0
+margin_bottom = 43.0
+focus_neighbour_top = NodePath("../Quit")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.470588, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.752941, 0, 1 )
+text = "Play"
+
+[node name="Controls" type="Button" parent="MainMenuContainer"]
+margin_top = 53.0
+margin_right = 150.0
+margin_bottom = 96.0
+focus_neighbour_top = NodePath("../Quit")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.470588, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.752941, 0, 1 )
+text = "Controls"
+
+[node name="Quit" type="Button" parent="MainMenuContainer"]
+margin_top = 106.0
+margin_right = 150.0
+margin_bottom = 150.0
+focus_neighbour_bottom = NodePath("../Play")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 1, 0.470588, 0, 1 )
+text = "Quit"
+
+[node name="LevelSelectContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 102.0
+margin_right = 150.0
+margin_bottom = 402.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelectContainer"]
+margin_right = 508.0
+margin_bottom = 40.0
+
+[node name="PreviousLevel" type="Button" parent="LevelSelectContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
+text = "<="
+
+[node name="LevelSelectTitle" type="RichTextLabel" parent="LevelSelectContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 404.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 40 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Level Selection
+"
+
+[node name="NextLevel" type="Button" parent="LevelSelectContainer/HBoxContainer"]
+margin_left = 408.0
+margin_right = 508.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
+text = "=>"
+
+[node name="GridLevel" type="GridContainer" parent="LevelSelectContainer"]
+margin_top = 44.0
+margin_right = 508.0
+margin_bottom = 344.0
+rect_min_size = Vector2( 300, 300 )
+
+[node name="OptionsContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -250.0
+margin_top = -75.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MuteSound" type="Button" parent="OptionsContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_constants/hseparation = 25
+text = "MuteSound"
+
+[node name="MuteMusic" type="Button" parent="OptionsContainer"]
+margin_left = 125.0
+margin_right = 225.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 4 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_constants/hseparation = 25
+text = "MuteMusic"
+
+[connection signal="pressed" from="MainMenuContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="MainMenuContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/HBoxContainer/PreviousLevel" to="." method="_on_PreviousLevel_pressed"]
+[connection signal="pressed" from="LevelSelectContainer/HBoxContainer/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="OptionsContainer/MuteSound" to="." method="_on_MuteSound_pressed"]
+[connection signal="pressed" from="OptionsContainer/MuteMusic" to="." method="_on_MuteMusic_pressed"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://UI_button_Style/UI_Button_Style.tres" type="StyleBox" id=2]
+[ext_resource path="res://UI_button_Style/BoxStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://UI_button_Style/UI_Button_Style_Hover.tres" type="StyleBox" id=4]
+
+[node name="CanvasPauseMenu" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -174.0
+margin_top = -174.0
+margin_right = 174.0
+margin_bottom = 174.0
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+text = "PAUSE"
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 110.0
+margin_right = 300.0
+margin_bottom = 132.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_constants/hseparation = 0
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 142.0
+margin_right = 300.0
+margin_bottom = 164.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_constants/hseparation = 0
+text = "Restart"
+
+[node name="Option" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 174.0
+margin_right = 300.0
+margin_bottom = 196.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_constants/hseparation = 0
+text = "Options"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 206.0
+margin_right = 300.0
+margin_bottom = 228.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+custom_constants/hseparation = 0
+text = "Quit"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="Panel" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="Panel" method="_on_Restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="Panel" method="_on_Quit_pressed"]
