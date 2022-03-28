@@ -65,12 +65,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasEndLevel" parent="." instance=ExtResource( 9 )]
-
-[node name="CanvasUILevel" parent="." instance=ExtResource( 2 )]
-
-[node name="CanvasPauseMenu" parent="." instance=ExtResource( 3 )]
-
 [node name="TutoTriggers" type="Node" parent="."]
 
 [node name="TutoTrigger1" parent="TutoTriggers" instance=ExtResource( 6 )]
@@ -89,6 +83,12 @@ tile_data = PoolIntArray( 0, 9, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 
 
 [node name="SpawnPoint" type="Node2D" parent="."]
 position = Vector2( 128.693, 362.039 )
+
+[node name="CanvasEndLevel" parent="." instance=ExtResource( 9 )]
+
+[node name="CanvasUILevel" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasPauseMenu" parent="." instance=ExtResource( 3 )]
 
 [connection signal="body_entered" from="EndZone" to="Player" method="_on_EndZone_body_entered"]
 [connection signal="body_entered" from="DeathZone" to="Player" method="_on_DeathZone_body_entered"]

@@ -10,6 +10,7 @@
 [ext_resource path="res://Sprites/Grab.png" type="Texture" id=8]
 
 [node name="CanvasEndLevel" type="CanvasLayer"]
+pause_mode = 2
 
 [node name="EndLevelPanel" type="Panel" parent="."]
 anchor_left = 0.5

@@ -18,6 +18,8 @@ var waitingForLoad = true;
 var endOfLevel = false
 var readyToPlay = false
 
+var isPause = false
+
 var bronzeMedal = load("res://Sprites/BronzeMedal.png")
 var silverMedal = load("res://Sprites/SilverMedal.png")
 var goldMedal = load("res://Sprites/GoldMedal.png")
@@ -40,8 +42,7 @@ func _process(delta):
 		elif readyToPlay:
 			startLevel()
 			readyToPlay = false
-
-
+			
 
 
 func getWorldNumber(name):

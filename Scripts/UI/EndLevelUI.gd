@@ -19,6 +19,8 @@ var bronzeMedal = load("res://Sprites/BronzeMedal.png")
 var silverMedal = load("res://Sprites/SilverMedal.png")
 var goldMedal = load("res://Sprites/GoldMedal.png")
 
+var isPause = false
+
 func _ready():
 	#self.visible = false
 	GameManager.endLevelUI = self
@@ -26,6 +28,21 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released("reset"):
 		GameManager.reset()
+		
+	if Input.is_action_just_pressed("esc"):
+		if !isPause:
+			get_tree().paused = true
+			self.visible = true
+			isPause = !isPause
+		else:
+			resume()
+
+
+func resume():
+	get_tree().paused = false
+	self.visible = false
+	isPause = !isPause
+
 
 
 func setStartLevelUI(bestTime, medalValues, level, levelName):

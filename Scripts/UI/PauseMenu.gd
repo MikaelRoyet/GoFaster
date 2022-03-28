@@ -11,15 +11,7 @@ func _ready():
 	self.visible = false
 
 func _process(delta):
-	if Input.is_action_just_pressed("esc"):
-		if !isPause:
-			get_tree().paused = true
-			self.visible = true
-			isPause = !isPause
-		else:
-			resume()
-
-		
+	pass
 
 
 
